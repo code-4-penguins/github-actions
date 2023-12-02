@@ -1,6 +1,6 @@
 {
   "auths": {
-    "https://index.docker.io/v1/codeforpenguins/my-python-app": {
+    "https://index.docker.io/v1/codeforpenguins": {
       "auth": "Y29kZWZvcnBlbmd1aW5zOmRja3JfcGF0X3dSNHJROWRMMy1QTEUzS3F1cndPcEhOakxtdw=="
     }
   }
