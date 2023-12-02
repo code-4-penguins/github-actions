@@ -17,7 +17,7 @@ jobs:
           cat <<EOF > config.json
           {
             "auths": {
-              "https://ghcr.io": {
+              "https://ghcr.io/code-4-penguins": {
                 "auth": "$(echo -n ${{ secrets.REGISTRY_USER }}:${{ secrets.REGISTRY_TOKEN }} | base64)"
               }
             }
