@@ -25,6 +25,8 @@ jobs:
           EOF
           cat config.json
 
+      # debug from cli:
+      # docker run -ti --rm -v `pwd`:/workspace -v `pwd`/config.json:/kaniko/.docker/config.json:ro gcr.io/kaniko-project/executor:latest --dockerfile=Dockerfile --destination=ghcr.io/code-4-penguins/github-actions/my-python-app:latest
       - name: Build the Docker image
         run: |
           docker run \
@@ -33,6 +35,4 @@ jobs:
             gcr.io/kaniko-project/executor:latest \
               --dockerfile=Dockerfile \
               --context dir:///workspace/ \
-              --destination=https://ghcr.io/code-4-penguins/github-actions/my-python-app
-              --verbosity debug
-            # --no-push
+              --destination=ghcr.io/code-4-penguins/github-actions/my-python-app:latest
