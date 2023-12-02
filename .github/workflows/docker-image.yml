@@ -17,6 +17,6 @@ jobs:
           -v `pwd`/config.json:/kaniko/.docker/config.json:ro \
           gcr.io/kaniko-project/executor:latest \
           --dockerfile=Dockerfile \
-          --destination=https://ghcr.io/code-4-penguins/github-actions/my-python-app:latest
           --context dir:///workspace/ \
-          --no-push
+          # --no-push
+          # --destination=https://ghcr.io/code-4-penguins/github-actions/my-python-app:latest
