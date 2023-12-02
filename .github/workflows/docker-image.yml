@@ -18,11 +18,12 @@ jobs:
           {
             "auths": {
               "https://ghcr.io/code-4-penguins": {
-                "auth": "$(echo -n ${{ secrets.REGISTRY_USER }}:${{ secrets.REGISTRY_TOKEN }} | base64)"
+                "auth": "$(echo -n :${{ secrets.REGISTRY_TOKEN }} | base64)"
               }
             }
           }
           EOF
+          cat config.json
 
       - name: Build the Docker image
         run: |
