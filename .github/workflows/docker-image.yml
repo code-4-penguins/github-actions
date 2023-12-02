@@ -33,5 +33,5 @@ jobs:
             gcr.io/kaniko-project/executor:latest \
               --dockerfile=Dockerfile \
               --context dir:///workspace/ \
-              --destination=https://ghcr.io/code-4-penguins/github-actions/my-python-app:latest
+              --destination=https://ghcr.io/code-4-penguins/github-actions/my-python-app
             # --no-push
