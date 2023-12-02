@@ -34,4 +34,5 @@ jobs:
               --dockerfile=Dockerfile \
               --context dir:///workspace/ \
               --destination=https://ghcr.io/code-4-penguins/github-actions/my-python-app
+              --verbosity debug
             # --no-push
