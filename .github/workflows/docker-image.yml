@@ -9,14 +9,28 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create config file for kaniko
+        run: |
+          cat <<EOF > config.json
+          {
+            "auths": {
+              "https://ghcr.io": {
+                "auth": "$(echo -n ${{ secrets.REGISTRY_USER }}:${{ secrets.REGISTRY_TOKEN }} | base64)"
+              }
+            }
+          }
+          EOF
+
       - name: Build the Docker image
         run: |
           docker run \
-          -v `pwd`:/workspace \
-          -v `pwd`/config.json:/kaniko/.docker/config.json:ro \
-          gcr.io/kaniko-project/executor:latest \
-          --dockerfile=Dockerfile \
-          --context dir:///workspace/ \
-          --no-push
-          # --destination=https://ghcr.io/code-4-penguins/github-actions/my-python-app:latest
+            -v `pwd`:/workspace \
+            -v `pwd`/config.json:/kaniko/.docker/config.json:ro \
+            gcr.io/kaniko-project/executor:latest \
+              --dockerfile=Dockerfile \
+              --context dir:///workspace/ \
+              --destination=https://ghcr.io/code-4-penguins/github-actions/my-python-app:latest
+            # --no-push
