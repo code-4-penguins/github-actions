@@ -1,7 +1,0 @@
-{
-  "auths": {
-    "https://ghcr.io/code-4-penguins": {
-      "auth": "Y29kZS00LXBlbmd1aW5zOmdocF9ham9TYkNWb2xuOWZKY0cwakx4M2xpTGtDWnVUZFMwekVOQjY="
-    }
-  }
-}
