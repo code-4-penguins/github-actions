@@ -17,6 +17,6 @@ jobs:
           -v `pwd`/config.json:/kaniko/.docker/config.json:ro \
           gcr.io/kaniko-project/executor:latest \
             --dockerfile=Dockerfile \
-            --destination=my-python-app-image:$(date +%s)
+            --destination=my-python-app:$(date +%s)
             --context dir:///workspace/ \
             --no-push
