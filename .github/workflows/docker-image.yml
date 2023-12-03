@@ -19,7 +19,7 @@ jobs:
           {
             "auths": {
               "ghcr.io": {
-                "auth": "$(echo -n :${{ secrets.GITHUB_TOKEN }} | base64)"
+                "auth": "$(echo -n ${{ secrets.REGISTRY_USER }}:${{ secrets.REGISTRY_TOKEN }} | base64)"
               }
             }
           }
