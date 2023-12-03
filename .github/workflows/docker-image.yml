@@ -14,11 +14,12 @@ jobs:
 
       - name: Create config file for kaniko
         run: |
+          # github automatically generates the token
           cat <<EOF > config.json
           {
             "auths": {
               "ghcr.io": {
-                "auth": "$(echo -n ${{ secrets.REGISTRY_USER }}:${{ secrets.REGISTRY_TOKEN }} | base64)"
+                "auth": "$(echo -n ${{ secrets.GITHUB_USER }}:${{ secrets.GITHUB_TOKEN }} | base64)"
               }
             }
           }
