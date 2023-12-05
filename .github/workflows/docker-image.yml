@@ -35,4 +35,4 @@ jobs:
             gcr.io/kaniko-project/executor:latest \
               --dockerfile=Dockerfile \
               --context dir:///workspace/ \
-              --destination=ghcr.io/code-4-penguins/github-actions/my-python-app:latest
+              --destination=ghcr.io/code-4-penguins/github-actions/my-python-app:test123
